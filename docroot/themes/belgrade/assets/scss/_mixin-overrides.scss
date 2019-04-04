@@ -1,0 +1,63 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:focus,
+  &.focus {
+    color: $background;
+    background-color: $color;
+        border-color: $border;
+  }
+  &:hover {
+    color: $background;
+    background-color: $color;
+        border-color: $border;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background;
+          border-color: $color;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}
+
+// mixin used to invert colors on dark bg
+@mixin inverted-color{
+  @extend %inverted-color-section;
+}
+
+
+@mixin well-variant($class, $bgcolor) {
+  .well-#{$class} {
+    background-color: $bgcolor;
+    @include inverted-color;
+    .btn-white{
+      background-color: $bgcolor;
+      color: white;
+      &:hover{
+        background-color: white;
+        color: $bgcolor;
+      }
+    }
+  }
+}

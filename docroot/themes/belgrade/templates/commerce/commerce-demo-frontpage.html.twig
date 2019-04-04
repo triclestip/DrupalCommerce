@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="featured-products">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="h1 text-align-center line">{{ 'Featured products'|t }}</h2>
+        </div>
+      </div>
+      <div class="row">
+        {% for featured_product in featured_products %}
+          <div class="featured-seller col-md-4">
+            {{ render_var(featured_product) }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="testimonial container-fluid well well-lg well-primary">
+  <div class="container">
+    <div class="text-align-center row">
+      <div class="col-xs-10 col-xs-push-1">
+        <p class="testimonial__text h2">Slow-carb paleo bicycle rights bushwick. Tote bag mustache man bun swag, tbh chartreuse synth stumptown portland cray.</p>
+        <div class="testimonial__rating">
+          <i class="glyphicon glyphicon-star"></i>
+          <i class="glyphicon glyphicon-star"></i>
+          <i class="glyphicon glyphicon-star"></i>
+          <i class="glyphicon glyphicon-star"></i>
+          <i class="glyphicon glyphicon-star-empty"></i>
+        </div>
+        <p>Nikola White, customer</p>
+      </div>
+    </div>
+  </div>
+</div>
+

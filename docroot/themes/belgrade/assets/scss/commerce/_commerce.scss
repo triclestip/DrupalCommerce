@@ -1,0 +1,32 @@
+.cart-empty-page,
+.checkout-complete{
+  font-size: 30px;
+  text-align: center;
+  margin: 90px auto;
+  font-weight: 300;
+  max-width: 560px;
+}
+
+.path-checkout .page-header,
+.path-checkout .breadcrumb {
+  display: none;
+}
+
+.form-wrapper__returning-customer {
+  a {
+    @extend .btn, .btn-link
+  }
+}
+
+.path-cart {
+  [id="edit-submit"] {
+    @extend .btn-default
+  }
+  [id="edit-checkout"] {
+    @extend .btn-primary
+  }
+
+  .form-actions {
+    text-align: right;
+  }
+}

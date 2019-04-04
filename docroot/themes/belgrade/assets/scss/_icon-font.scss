@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "icons";
+    src: url("../fonts/icons.eot?c51f97f899226e04a4fd8f2761edeada?#iefix") format("embedded-opentype"),
+url("../fonts/icons.woff2?c51f97f899226e04a4fd8f2761edeada") format("woff2"),
+url("../fonts/icons.woff?c51f97f899226e04a4fd8f2761edeada") format("woff"),
+url("../fonts/icons.ttf?c51f97f899226e04a4fd8f2761edeada") format("truetype"),
+url("../fonts/icons.svg?c51f97f899226e04a4fd8f2761edeada#icons") format("svg");
+}
+
+.glyph {
+    line-height: 1;
+}
+
+.glyph:before {
+    content: "";
+    display: inline-block;
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    vertical-align: middle;
+}
+
+.glyph-arrows:before {
+    content: "\f101";
+}
+.glyph-cart:before {
+    content: "\f102";
+}
+.glyph-checked-rounded:before {
+    content: "\f103";
+}
+.glyph-close:before {
+    content: "\f104";
+}
+.glyph-facebook:before {
+    content: "\f105";
+}
+.glyph-look:before {
+    content: "\f106";
+}
+.glyph-plus:before {
+    content: "\f107";
+}
+.glyph-refresh:before {
+    content: "\f108";
+}
+.glyph-twitter:before {
+    content: "\f109";
+}
+.glyph-youtube:before {
+    content: "\f10a";
+}

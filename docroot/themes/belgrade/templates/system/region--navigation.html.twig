@@ -1,0 +1,9 @@
+{% extends 'region.html.twig' %}
+
+{% block region_content %}
+    <button type="button" class="close-btn" data-toggle="collapse" data-target="#off-canvas" aria-expanded="false">
+      <span class="sr-only">{{'Close navigation'|t}}</span>
+    </button>
+    {{ parent() }}
+
+{% endblock %}

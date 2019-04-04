@@ -1,0 +1,10 @@
+{
+  "name": "drupal/belgrade",
+  "type": "drupal-theme",
+  "description": "Belgrade theme for Drupal Commerce.",
+  "homepage": "http://drupal.org/project/belgrade",
+  "license": "GPL-2.0",
+  "require": {
+    "drupal/commerce_bootstrap": "^1.0"
+  }
+}

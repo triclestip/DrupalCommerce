@@ -1,0 +1,124 @@
+// To be used on dark backgrounds
+%font-smoothing{
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.glyph__circled,
+%glyph-circled{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px!important;
+  background-color: white;
+  border-radius: 50%;
+  color: #272727;
+  font-size: 16px;
+  text-align: center;
+}
+
+%no-btn{
+  background-color: transparent;
+  border: 0;
+  font-size: 18px;
+  color: inherit;
+  padding: 0;
+}
+
+.line,
+%headings-line{
+  &:after{
+    display: block;
+    margin: 10px auto;
+    width: 40px;
+    height: 2px;
+    background-color: $violet;
+    content: "";
+  }
+}
+
+
+%caret-toggle {
+  color: $brand-primary;
+  content: '▼';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: -.5em;
+  padding-right: .5em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 10; // Use a more stylish icon if the theme uses glyphicons.
+  .has-glyphicons & {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\e114'; // .glyphicon-chevron-down
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+  }
+  .has-error & {
+    color: $state-danger-text;
+  }
+  .has-success & {
+    color: $state-success-text;
+  }
+  .has-warning & {
+    color: $state-warning-text;
+  }
+}
+
+
+%inverted-color-section{
+  color: white;
+  .form-header:after{
+    background-color: white;
+  }
+  a{
+    color: white;
+    &:focus:hover,
+    &:focus,
+    &:hover{
+      color: white;
+      opacity: .6;
+    }
+  }
+  .btn-link{
+    color: white;
+  }
+  .form-control{
+    border-color: white;
+    background-color: transparent;
+    color: white;
+  }
+  .select-wrapper::after {
+    color: white;
+  }
+  .panel-default > .panel-heading{
+    border-color: white;
+  }
+  [type="checkbox"]:checked + label::after{
+    border-color: white;
+    background: white;
+  }
+  [type="checkbox"]:checked + label::before{
+    border-right: 2px solid $brand-primary;
+    border-bottom: 2px solid $brand-primary;
+  }
+  %caret-toggle{
+    color: white;
+  }
+  // button overrides
+  .btn{
+    @extend .btn-white;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  // table overrides
+  .table > tfoot > tr > td,
+  .table > tbody > tr > td{
+    border-top: 2px solid rgba(white, 0.1);
+  }
+}

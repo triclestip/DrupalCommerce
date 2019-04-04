@@ -1,0 +1,21 @@
+<div class="cart--cart-offcanvas well well-lg well-primary">
+  <div class="cart--cart-offcanvas__close">
+    <button type="button" class="button btn close-btn"><span class="visually-hidden"> Close cart</span> </button>
+  </div>
+  <% if (count > 0) { %>
+  <div class="cart-block--offcanvas-contents">
+    <div class="cart-block--offcanvas-contents__inner">
+      <h2><% print(Drupal.t('Shopping bag')) %></h2>
+      <div class="cart-block--offcanvas-contents__items"></div>
+      <div class="cart-block--offcanvas-contents__links">
+        <%= links %>
+      </div>
+      <div class="cart--cart-offcanvas__close visible-xs visible-sm text-align-center">
+        <button type="button" class="button btn-link">Continue shopping</button>
+      </div>
+    </div>
+  </div>
+  <% } else { %>
+  <div><% print(Drupal.t('Your cart is empty')) %></div>
+  <% } %>
+</div>

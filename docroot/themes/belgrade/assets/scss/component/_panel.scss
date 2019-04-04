@@ -1,0 +1,45 @@
+/**
+ * Panel styling.
+ */
+ .panel{
+   box-shadow: none;
+ }
+
+.panel-title {
+  display: block;
+  &, &:hover, &:focus, &:hover:focus {
+    color: inherit;
+  }
+  &:focus, &:hover {
+    text-decoration: none;
+  }
+  // fixes for collapsable panels
+  &[data-toggle="collapse"]{
+    position: relative;
+    &:after{
+      @extend %caret-toggle;
+      padding-right: 0;
+    }
+    &[aria-expanded="true"]:after{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.panel-default{
+  > .panel-heading{
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 2px solid $brand-primary;
+  }
+  .panel-body{
+    padding-top: 35px;
+    padding-bottom: 35px;
+    &.panel-collapse{
+      padding: 0;
+      > .form-item{
+        padding: 25px 15px;
+      }
+    }
+  }
+}

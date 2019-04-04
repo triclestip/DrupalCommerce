@@ -1,0 +1,62 @@
+.cart--cart-offcanvas{
+  height: 100%;
+  overflow: auto;
+}
+
+.cart-block--offcanvas{
+  &-cart-table__quantity{
+    .form-control{
+      padding: 0 0 0 5px;
+      width: 40px;
+      height: 35px;
+      text-align: center;
+    }
+  }
+  &-cart-table__remove{
+    .glyph{
+      font-size: 10px;
+    }
+  }
+  &-cart-table{
+    margin: 55px 0;
+  }
+  &-contents__update{
+    &:hover{
+      .glyph{
+        @extend .glyphicon-spin;
+      }
+    }
+    .glyph{
+      margin-right: 5px;
+    }
+  }
+  &-contents__links{
+    a{
+      width: 100%;
+      @extend .btn;
+    }
+  }
+}
+
+.cart-block--offcanvas-contents__links{
+  margin-bottom: 1em;
+}
+
+// Adjust the cart block depending on the navbar
+body.navbar-is-static-top{
+  .cart-offcanvas{
+    padding-top: 0;
+  }
+}
+body.navbar-is-fixed-top{
+  .cart-offcanvas{
+    padding-top: $navbar-height;
+    z-index: 999;
+  }
+  &.toolbar-fixed .cart-offcanvas{
+    padding-top: $navbar-height + 20px;
+  }
+  &.toolbar-tray-open .cart-offcanvas{
+    padding-top: $navbar-height + 79px;
+  }
+}

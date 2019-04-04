@@ -1,0 +1,37 @@
+.btn,
+.button{
+  padding: 16px 30px;
+  text-transform: uppercase;
+  font-size: $btn-font-size;
+  border-width: 2px;
+  transition: all .3s ease-in-out;
+  &:active,
+  &:focus,
+  &:active:focus,
+  &:hover{
+    outline: 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.btn-link{
+  &:active,
+  &:focus,
+  &:active:focus,
+  &:hover{
+    outline: 0;
+  }
+}
+
+// Only one button version
+.btn-default{
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}
+
+.btn-white{
+  @include button-variant(white, $brand-primary, white);
+}
+.btn-white-inverted{
+  @include button-variant($brand-primary, white, white);
+}

@@ -1,0 +1,12 @@
+<div class="form-item js-form-item form-type-select js-form-type-select form-item-purchased-entity-attributes-attribute-<%= attributeId %> js-form-item-purchased-entity-attributes-attribute-<%= attributeId %> form-group">
+  <label for="edit-purchased-entity-attributes-attribute-<%= attributeId %>" class="control-label js-form-required form-required"><%= label %></label>
+  <div class="select-wrapper">
+    <select id="edit-purchased-entity-attributes-attribute-<%= attributeId %>" name="attribute_<%= attributeId %>" class="form-select required form-control" required="required" aria-required="true">
+      <% _.each(attributeValues, function(currentValue, key) { %>
+      <option value="<%= currentValue.attribute_value_id %>" <%= (activeValue === currentValue.attribute_value_id) ? 'selected="selected"' : '' %>>
+      <%= currentValue.name %>
+      </option>
+      <% }); %>
+    </select>
+  </div>
+</div>

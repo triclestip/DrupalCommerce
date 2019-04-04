@@ -1,0 +1,22 @@
+// Baseline styles
+
+.table {
+
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.table-striped-alt {
+  > tbody > tr:nth-of-type(even) {
+    background-color: $table-bg-accent;
+  }
+}

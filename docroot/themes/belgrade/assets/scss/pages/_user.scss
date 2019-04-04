@@ -1,0 +1,86 @@
+// CSS to hide primary tabs and style page header
+.path-user:not(.logged-in) {
+  .page-header {
+    display: none;
+  }
+}
+
+// Login, signup and forgot password forms
+.auth-user-form {
+  margin: 0 auto;
+  width: calc(100% - 30px);
+  max-width: $user-form-width;
+  .form-header{
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    &:after{
+      margin-top: 20px;
+    }
+  }
+  >form {
+    padding: 50px 20px 80px;
+    background-color: $violet-light;
+    .form-control {
+      height: $user-form-input-height;
+    }
+  }
+  .panel-default {
+    background-color: transparent;
+  }
+  .auth-user-form--footer {
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+  .btn {
+    width: 100%;
+    +.btn {
+      margin-top: 20px;
+    }
+  }
+  @media screen and (min-width: $screen-sm) {
+    .auth-user-form--footer,
+    > form{
+      padding-left: 130px;
+      padding-right: 130px;
+    }
+  }
+}
+
+// Form titles
+.form-header {
+  margin-bottom: 30px;
+  @extend %headings-line;
+} 
+
+// User login form
+.user-login-form {
+  .form-type-password {
+    margin-bottom: 0;
+  }
+  +.auth-user-form--footer {
+    background-color: $brand-primary;
+    color: white;
+  }
+}
+// Forgot password link
+.pass-link {
+  float: right;
+  margin-bottom: 40px;
+  font-style: italic;
+} 
+
+// User Register form
+.user-pass,
+.user-register-form {
+  background-color: $brand-primary!important;
+  @extend %inverted-color-section;
+  +.auth-user-form--footer {
+    background-color: $violet-light;
+  }
+}

@@ -1,0 +1,4 @@
+entity.commerce_promotion_coupon.collection:
+  route_name: entity.commerce_promotion_coupon.collection
+  base_route: entity.commerce_promotion.edit_form
+  title: Coupons

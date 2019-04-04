@@ -1,0 +1,10 @@
+//
+// Top Navigation
+// --------------------------------------------------
+.region-top-navigation {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  height: $navbar-height;
+}

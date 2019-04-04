@@ -1,0 +1,21 @@
+field.field_settings.state:
+  type: mapping
+  mapping:
+    workflow:
+      type: string
+      label: Workflow
+    workflow_callback:
+      type: string
+      label: Workflow callback
+
+field.value.state:
+  type: mapping
+  label: 'Default value'
+  mapping:
+    value:
+      type: string
+      label: 'Value'
+
+views.filter.state_machine_state:
+  type: views.filter.in_operator
+  label: 'State'

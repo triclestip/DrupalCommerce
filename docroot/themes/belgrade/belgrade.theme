@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Belgrade theme for Drupal Commerce.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function belgrade_theme_suggestions_field_alter(&$suggestions, $variables) {
+  $element = $variables['element'];
+  // Field template suggestions based on view mode.
+  $suggestions[] = 'field__' . $element['#entity_type'] . '__' . $element['#field_name'] . '__' . $element['#view_mode'];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function belgrade_theme_suggestions_form_alter(&$suggestions, $variables) {
+  $form_id = $variables['element']['#form_id'];
+  if (in_array($form_id, ['user_login_form','user_register_form','user_pass']))  {
+    $suggestions[] = 'form__' . $form_id;
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for block templates.
+ */
+function belgrade_preprocess_block(&$variables) {
+  if ($variables['base_plugin_id'] == 'system_branding_block' && !empty($variables['is_front'])) {
+    $variables['site_logo'] =  base_path() . drupal_get_path('theme','belgrade') . '/logo-inverted.svg';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for form element templates.
+ */
+function belgrade_preprocess_form_element(&$variables) {
+  $element = &$variables['element'];
+  // This function is invoked as theme wrapper, but the rendered form element may
+  // not necessarily have been processed by \Drupal::formBuilder()->doBuildForm().
+  $element += [
+    '#title_display' => 'before',
+    '#wrapper_attributes' => [],
+    '#label_attributes' => [],
+  ];
+  $variables['attributes'] = $element['#wrapper_attributes'];
+
+  // Add label_display and label variables to template.
+  $variables['label_display'] = $element['#title_display'];
+  $variables['label'] = ['#theme' => 'form_element_label'];
+  $variables['label'] += array_intersect_key($element, array_flip(['#id', '#required', '#title', '#title_display']));
+  $variables['label']['#attributes'] = $element['#label_attributes'];
+
+  $variables['children'] = $element['#children'];
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function belgrade_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Display the "Forgot your password?" link under the password input.
+  $pass_link = \Drupal::l(t('Forgot your password?'), Url::fromUri('route:user.pass', ['attributes' => ['class' => ['pass-link']]]));
+  $form['pass']['#suffix'] = $pass_link;
+}

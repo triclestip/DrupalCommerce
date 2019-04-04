@@ -1,0 +1,31 @@
+# core: 8.x
+type: theme
+base theme: commerce_bootstrap
+
+name: 'Belgrade'
+description: 'Belgrade theme for Drupal Commerce.'
+package: 'Bootstrap'
+
+regions:
+  navigation: 'Navigation'
+  top_navigation: 'Navigation (Top bar)'
+  header: 'Header'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer: 'Footer'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+
+libraries:
+  - 'belgrade/fonts'
+  - 'belgrade/theme'
+  - 'belgrade/bootstrap-scripts'
+
+# Information added by Drupal.org packaging script on 2018-11-28
+version: '8.x-1.0-beta5'
+core: '8.x'
+project: 'belgrade'
+datestamp: 1543417386

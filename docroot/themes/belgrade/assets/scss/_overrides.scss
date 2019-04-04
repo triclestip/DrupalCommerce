@@ -1,0 +1,56 @@
+body{
+  @extend %font-smoothing;
+}
+
+ol, ul {
+  padding-left: 1.5em;
+  .popover &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Page header.
+.page-header {
+  margin-top: 0;
+  margin-bottom: 30px;
+  border-bottom: 0;
+  text-align: center;
+  @extend %headings-line;
+}
+
+// Paragraphs.
+p:last-child,
+.form-group:last-child,
+.panel:last-child {
+  margin-bottom: 0;
+}
+
+// Help region.
+.region-help {
+  > .glyphicon {
+    float: left;
+    margin: -0.05em 0.5em 0 0;
+    font-size: $font-size-large;
+  }
+  .block {
+    overflow: hidden;
+  }
+}
+
+.main-container{
+  overflow: hidden;
+}
+
+.help-block, .control-group .help-inline {
+  margin: 5px 0 10px;
+  padding: 0;
+  color: $gray-light;
+  font-size: 12px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.author{
+  margin-bottom: 25px;
+}

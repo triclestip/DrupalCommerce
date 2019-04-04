@@ -1,0 +1,56 @@
+.view-commerce-cart-form{
+  .views-field-purchased-entity{
+    > div{
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .field--name-title{
+      padding: 10px;
+      max-width: 220px;
+      width: 100%;
+    }
+  }
+  // object fit images
+  .field--name-field-images{
+    position: relative;
+    order: -1;
+    width: 140px;
+    height: 140px;
+    img{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+  }
+  .views-field-remove-button{
+    .btn{
+      padding: 8px 14px;
+      font-size: 16px;
+    }
+  }
+  .field--name-total-price{
+    margin-bottom: 35px;
+    padding: 30px 0;
+    border-bottom: 2px solid $brand-primary;
+    font-size: $font-size-h4;
+  }
+  .order-total-line-label{
+    margin-right: 10px;
+  }
+  .table{
+    margin-bottom: 0;
+    border-bottom: 2px solid $brand-primary;
+    font-size: 18px;
+
+    @extend .table-striped-alt;
+    th{
+      font-weight: normal;
+    }
+     > tbody > tr > td{
+      border-top: 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.featured-products{
+  padding: 20px 0 50px;
+  .commerce-product{
+    margin: 40px auto;
+  }
+}
+
+.testimonial{
+  margin-bottom: 0;
+  background-image: url("../images/testimonial.png");
+  background-size: cover;
+  background-position: center;
+  padding: 85px 0;
+  &__text{
+    font-style: italic;
+  }
+  &__rating{
+    margin: 15px 0;
+  }
+}

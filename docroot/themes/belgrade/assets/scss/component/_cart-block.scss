@@ -1,0 +1,41 @@
+.cart-block--contents {
+  background: $green;
+  top: $navbar-height;
+  color: white;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  max-width: 610px;
+  height: 100vh!important;
+  display: block!important;
+  transform: translateX(100%);
+  transition: transform $side-flyout-animation;
+  &__expanded {
+    transform: translateX(0);
+  } 
+  // when admin toolbar is opened
+  .toolbar-horizontal & {
+    top: $navbar-height + 40px;
+  }
+  .toolbar-tray-open & {
+    top: $navbar-height + 80px;
+  }
+  @media screen and (min-width: $grid-float-breakpoint) {
+    padding-right: 140px;
+  }
+}
+
+.cart-block--summary {
+  padding: 15px;
+  a {
+    color: $navbar-default-link-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      .cart-block--summary__count {
+        border-bottom: 1px solid rgba(white, 80);
+        padding-bottom: 2px;
+      }
+    }
+  }
+}

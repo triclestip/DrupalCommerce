@@ -1,0 +1,59 @@
+default:
+  id: default
+  label: Default
+  group: entity_test_with_bundle
+  states:
+    new:
+      label: New
+    fulfillment:
+      label: Fulfillment
+    completed:
+      label: Completed
+    canceled:
+      label: Canceled
+  transitions:
+    create:
+      label: Create
+      from: [new]
+      to:   fulfillment
+    fulfill:
+      label: Fulfill
+      from: [fulfillment]
+      to: completed
+    cancel:
+      label: Cancel
+      from: [new, fulfillment]
+      to:   canceled
+
+validation:
+  id: validation
+  label: Validatioj
+  group: entity_test_with_bundle
+  states:
+    new:
+      label: New
+    validation:
+      label: Validation
+    fulfillment:
+      label: Fulfillment
+    completed:
+      label: Completed
+    canceled:
+      label: Canceled
+  transitions:
+    create:
+      label: Create
+      from: [new]
+      to:   validation
+    validate:
+      label: Validate
+      from: [validation]
+      to:   fulfillment
+    fulfill:
+      label: Fulfill
+      from: [fulfillment]
+      to: completed
+    cancel:
+      label: Cancel
+      from: [new, validation, fulfillment]
+      to:   canceled

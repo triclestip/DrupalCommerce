@@ -1,0 +1,19 @@
+name: Commerce
+type: module
+description: 'Defines common functionality for all Commerce modules.'
+package: Commerce
+# core: 8.x
+configure: commerce.configuration
+dependencies:
+  - address:address
+  - entity:entity
+  - inline_entity_form:inline_entity_form
+  - drupal:datetime
+  - drupal:views
+  - drupal:system (>=8.6.0)
+
+# Information added by Drupal.org packaging script on 2019-04-04
+version: '8.x-2.13'
+core: '8.x'
+project: 'commerce'
+datestamp: 1554337696

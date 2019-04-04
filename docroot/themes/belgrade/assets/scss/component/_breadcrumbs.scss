@@ -1,0 +1,14 @@
+.breadcrumb{
+  font-size: $breadcrumb-font-size;
+  > li{
+    > a{
+      color: $breadcrumb-link-color;
+    }
+    + li{
+      &:before{
+        padding: 0;
+        padding-left: 3px;
+      }
+    }
+  }
+}

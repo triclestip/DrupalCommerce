@@ -1,0 +1,48 @@
+
+.side-flyout{
+  overflow: auto;
+  padding-top: $navbar-height + 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 100vh!important;
+  background: $side-flyout-bg;
+  
+  &.right,
+  &.left {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $flyout-z-index;
+    transition: transform $side-flyout-animation;
+    transform: translateX(-100%);
+    // when admin toolbar is opened
+    .toolbar-horizontal &{
+      top: 40px;
+    }
+    .toolbar-tray-open &{
+      top: 80px;
+    }
+  }
+
+  &.right{
+    right: 0;
+    left: auto;
+    transform: translateX(100%);
+  }
+
+   // sizes
+    @media screen and (min-width: $screen-sm) {
+      width: $flyout-width-sm;
+    }
+    @media screen and (min-width: $screen-md) {
+      width: $flyout-width-md;
+    }
+    @media screen and (min-width: $screen-lg) {
+      width: $flyout-width-lg;
+    }
+
+    &[aria-expanded="true"]{
+      transform: translateX(0);
+    }
+}

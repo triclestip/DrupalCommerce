@@ -1,0 +1,32 @@
+{
+  "name": "belgrade-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp watch",
+    "icons": "svgo -f ./assets/icons/ && icon-font-generator assets/icons/*.svg --html false -o assets/fonts/ --fontspath ../fonts  --csstp ./icons-scss.hbs -t .glyph -p glyph --csspath assets/scss/_icon-font.scss",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "repository": "git@git.circleweb.io:cwf/belgrade-theme.git",
+  "author": "Ivan Buisic <ibuisic@circlewf.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sizereport": "^1.2.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "icon-font-generator": "^1.1.1",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.2",
+    "svgo": "^1.0.1"
+  }
+}

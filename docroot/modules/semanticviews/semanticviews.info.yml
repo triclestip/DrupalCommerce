@@ -1,0 +1,13 @@
+name: Semantic Views
+type: module
+description: 'Views plugins for UI management of output markup'
+# core: 8.x
+dependencies:
+ - drupal:views
+package: Views
+
+# Information added by Drupal.org packaging script on 2017-10-31
+version: '8.x-2.2'
+core: '8.x'
+project: 'semanticviews'
+datestamp: 1509484387

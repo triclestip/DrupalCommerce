@@ -1,0 +1,32 @@
+/* Number
+   ========================================================================== */
+
+.form-type-number{
+  display: flex;
+  .form-control{
+    -webkit-appearance: none;
+    width: $input-height-base;
+    padding: 0;
+    text-align: center;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+.number-btn{
+  border: 0;
+  background: none;
+  font-size: 30px;
+  padding: 0 7px;
+  line-height: $input-height-base;
+  color: $brand-primary;
+  &:focus{
+    outline: 0;
+  }
+  // adjustments for font
+  &.decrement{
+    margin-top: -4px;
+  }
+}

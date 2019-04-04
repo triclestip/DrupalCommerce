@@ -1,0 +1,30 @@
+.toggle-btn{
+  display: inline-block!important;
+  padding: 6px 10px;
+  border: 0;
+
+  @extend .navbar-toggle;
+  .icon-bar{
+    width: 30px;
+    height: 2px;
+    background-color: $navbar-default-toggle-icon-bar-bg;
+    + .icon-bar{
+      margin-top: 7px;
+    }
+  }
+  &--bars{
+    display: inline-block;
+    margin-right: 10px;
+  }
+  &--name{
+    color: white;
+    font-size: 16px;
+  }
+  // overrides for navbar
+  .navbar-header &{
+    float: none;
+  }
+  @media screen and (min-width: $screen-sm) {
+    padding: 6px 0;
+  }
+}

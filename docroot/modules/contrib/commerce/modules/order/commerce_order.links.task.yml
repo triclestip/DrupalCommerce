@@ -1,0 +1,4 @@
+entity.commerce_order.collection:
+  route_name: entity.commerce_order.collection
+  base_route: entity.commerce_order.collection
+  title: 'Orders'

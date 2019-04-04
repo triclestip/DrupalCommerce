@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ *
+ * @ingroup themeable
+ */
+#}
+{% extends "form--user-form.html.twig" %}
+{% block form_header %}
+  {{ 'Login'|t }}
+{% endblock %}
+{% block form_footer %}
+  <h3>{{('Not a member yet?'|t)}}</h3>
+  <a class="btn btn-white" href="{{ path('user.register') }}">{{ 'Signup'|t }}</a>
+{% endblock %}

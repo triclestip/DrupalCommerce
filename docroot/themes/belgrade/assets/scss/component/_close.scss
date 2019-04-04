@@ -1,0 +1,17 @@
+.close-btn {
+  position: relative;
+  z-index: 3;
+  float: right;
+  margin: 20px 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+
+  @extend .glyph;
+  @extend .glyph-close;
+  &:focus {
+    outline: 0;
+  }
+}
+

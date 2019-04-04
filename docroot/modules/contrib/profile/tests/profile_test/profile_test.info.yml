@@ -1,0 +1,12 @@
+name: Profile
+type: module
+description: 'Test module for Profile.'
+# core: 8.x
+dependencies:
+  - profile
+
+# Information added by Drupal.org packaging script on 2019-03-12
+version: '8.x-1.0-rc4'
+core: '8.x'
+project: 'profile'
+datestamp: 1552407489

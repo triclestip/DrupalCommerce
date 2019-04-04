@@ -1,0 +1,17 @@
+<div class="product--rendered-attribute fieldgroup form-composite form-item js-form-item form-wrapper js-form-wrapper panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title form-required"><%= label %></div>
+  </div>
+  <div class="panel-body">
+    <div>
+      <% _.each(attributeValues, function(currentValue, key) { %>
+      <div class="form-item js-form-item form-type-radio js-form-type-radio form-item-purchased-entity-attributes-attribute-<%= attributeId %> js-form-item-purchased-entity-attributes-attribute-<%= attributeId %> radio">
+        <input data-drupal-selector="edit-purchased-entity-attributes-attribute-<%= attributeId %>" class="form-radio" type="radio" id="edit-purchased-entity-attributes-attribute-<%= attributeId %>-<%= currentValue.attribute_value_id %>" name="attribute_<%= attributeId %>" value="<%= currentValue.attribute_value_id %>" <%= (activeValue === currentValue.attribute_value_id) ? 'checked' : '' %>>
+        <label for="edit-purchased-entity-attributes-attribute-<%= attributeId %>-<%= currentValue.attribute_value_id %>" class="control-label option">
+          <% print (currentValue.output) %>
+        </label>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>

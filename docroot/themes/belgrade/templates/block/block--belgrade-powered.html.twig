@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for system blocks.
+ *
+ * @ingroup templates
+ */
+#}
+
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+    'clearfix',
+  ]
+%}
+<section{{ attributes.addClass(classes) }}>
+  {% block content %}
+    <a class="footer--logo" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+      <img class="img-responsive" src="/{{ active_theme_path() }}/assets/images/logo-footer.svg" alt="{{ 'Home'|t }}" />
+    </a>
+    {{ content }}
+  {% endblock %}
+</section>

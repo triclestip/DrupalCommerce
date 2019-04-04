@@ -1,0 +1,57 @@
+{% extends 'page.html.twig' %}
+
+{# Main #}
+{% block main %}
+  <div role="main" class="main-container js-quickedit-main-content">
+      {# Off canvas side navigation #}
+      {% if page.navigation %}
+        <div id="off-canvas" class="side-flyout collapse left">
+          {{ page.navigation }}
+        </div>
+      {% endif %}
+
+      {# Header #}
+      {% if page.header %}
+        {% block header %}
+            {{ page.header }}
+        {% endblock %}
+      {% endif %}
+
+
+      {# Highlighted #}
+      {% if page.highlighted %}
+        {% block highlighted %}
+          <div class="container">
+            <div class="highlighted">{{ page.highlighted }}</div>
+          </div>
+          {% endblock %}
+      {% endif %}
+
+      <div class="row">
+        {# Content #}
+        <section{{ content_attributes }}>
+
+          {# Action Links #}
+          {% if action_links %}
+            {% block action_links %}
+              <ul class="action-links">{{ action_links }}</ul>
+            {% endblock %}
+          {% endif %}
+
+          {# Help #}
+          {% if page.help %}
+            {% block help %}
+              {{ page.help }}
+            {% endblock %}
+          {% endif %}
+
+          {# Content #}
+          {% block content %}
+            <a id="main-content"></a>
+            {{ page.content|without('belgrade_page_title') }}
+          {% endblock %}
+        </section>
+      </div>
+    </div>
+  </div>
+{% endblock %}
